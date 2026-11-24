@@ -1,3 +1,5 @@
+// Ativar links do Menu
+
 const linksNav = document.querySelectorAll(".header-menu a");
 
 function ativarLinkNav(link) {
@@ -8,3 +10,12 @@ function ativarLinkNav(link) {
   }
 }
 linksNav.forEach(ativarLinkNav);
+
+// Parâmetros URL (Ativar itens do orçamento)
+
+const params = new URLSearchParams(location.search);
+
+params.forEach((item) => {
+  const element = document.querySelector(`[type="radio"][value="${item}"]`);
+  if (element) element.checked = true;
+});
