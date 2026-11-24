@@ -13,12 +13,16 @@ linksNav.forEach(ativarLinkNav);
 
 // Parâmetros URL (Ativar itens do orçamento)
 
-const params = new URLSearchParams(location.search);
+const parametros = new URLSearchParams(location.search);
 
-params.forEach((item) => {
-  const element = document.querySelector(`[type="radio"][value="${item}"]`);
-  if (element) element.checked = true;
-});
+function ativarProduto(parametro) {
+  const elemento = document.getElementById(parametro);
+  if (elemento) {
+    elemento.checked = true;
+  }
+}
+
+parametros.forEach(ativarProduto);
 
 // Perguntas frequentes
 
